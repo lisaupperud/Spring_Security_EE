@@ -1,4 +1,4 @@
-package com.liluppis.spring_security;
+package com.liluppis.spring_security.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

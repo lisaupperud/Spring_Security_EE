@@ -17,3 +17,19 @@ The method hashes and salts the password for safe storage.
 There is no way to ensure a 100% safety for an application. The goals are to make it as
 difficult as possible for a hacker to find our data.
 
+**Encode**
+
+Data transfer, storage & compatibility.
+
+**Encrypt**
+
+Hide sensitive information, but make it humanly readable through decryption.
+
+**Hash**
+
+Data transfer, storage & compatibility.
+
+### @PreAuthorize Interface
+
+
+
