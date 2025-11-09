@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Homepage</h1>
+    <p>Q: Does "/" redirect us to home-page.html?</p>
+    <p>A: YES, it does!</p>
+
+    <a th:href="@{/admin}">Secret ADMIN page | Only USERS can access this</a>
+</body>
+</html>
