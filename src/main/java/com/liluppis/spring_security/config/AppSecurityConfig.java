@@ -21,6 +21,10 @@ import static org.springframework.security.config.Customizer.withDefaults;
  * and also information and data that will be exceeded for the application.
  */
 
+// Lisa - Lisa123! - USER
+// ADMIN - Admin123! - ADMIN
+
+
 @Configuration
 @EnableWebSecurity
 public class AppSecurityConfig {
@@ -36,11 +40,23 @@ public class AppSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/login").permitAll()
-                        .requestMatchers("/admin").hasRole("ADMIN")
+                        .requestMatchers("/", "/register", "/static/**").permitAll()        // The "/" = The Endpoint
+                        .requestMatchers("/admin").hasRole(UserRole.ADMIN.name())
+                        .requestMatchers("/user").hasRole(UserRole.USER.name())
                         .anyRequest().authenticated()
                 )
-                .formLogin(withDefaults());
+                .formLogin(form -> form
+                        .loginPage("/login")            // Din GET-mapping för login.html
+                        .loginProcessingUrl("/authenticate")  // matchar th:action="@{/authenticate}"
+                        .defaultSuccessUrl("/user", true)     // vart man ska efter lyckad inloggning
+                        .failureUrl("/login?error=true")      // vad som händer vid fel
+                        .permitAll()
+                )
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/login?logout=true")
+                        .permitAll()
+                );
 
         return http.build();
     }

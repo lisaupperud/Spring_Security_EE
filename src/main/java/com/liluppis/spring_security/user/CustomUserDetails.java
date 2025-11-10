@@ -31,31 +31,32 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        return "";
+        return customUser.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return "";
+        return customUser.getUsername();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return UserDetails.super.isAccountNonExpired();
+        return customUser.isAccountNonExpired();
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return UserDetails.super.isAccountNonLocked();
+        return customUser.isAccountNonLocked();
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return UserDetails.super.isCredentialsNonExpired();
+        return customUser.isCredentialsNonExpired();
     }
 
     @Override
     public boolean isEnabled() {
-        return UserDetails.super.isEnabled();
+        return customUser.isEnabled();
     }
+
 }

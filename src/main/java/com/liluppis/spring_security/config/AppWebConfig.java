@@ -21,5 +21,9 @@ public class AppWebConfig implements WebMvcConfigurer {
         // adding a field with the method
         registry.addViewController("/").setViewName("home-page"); // setting the name
         registry.addViewController("/admin").setViewName("admin-page");
+        /*registry.addViewController("/login").setViewName("login");
+        registry.addViewController("/register").setViewName("register-page");
+        registry.addViewController("/logout").setViewName("logout");
+        registry.addViewController("/user").setViewName("user-page");*/
     }
 }
