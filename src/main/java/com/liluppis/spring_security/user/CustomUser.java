@@ -2,6 +2,9 @@ package com.liluppis.spring_security.user;
 
 import com.liluppis.spring_security.user.authority.UserRole;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 import java.util.Set;
 import java.util.UUID;
@@ -12,6 +15,7 @@ public class CustomUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(updatable = false, nullable = false)
     private UUID id;
     @Column(nullable = false, unique = true)
     private String username;
