@@ -46,7 +46,7 @@ public class AppSecurityConfig {
     }
 
     // CREATE DEBUG USER
-    @Bean       // Specifies that this is a Spring related Object
+    /*@Bean       // Specifies that this is a Spring related Object
     public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
         UserDetails user =
                 User
@@ -57,6 +57,6 @@ public class AppSecurityConfig {
                         .build();               // Build the User as the last step
 
         return new InMemoryUserDetailsManager(user);        // DONT FORGET to return the User
-    }
+    }*/
 
 }
