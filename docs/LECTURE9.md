@@ -37,7 +37,7 @@ This means that when Spring asks: "What is this user's password?" we can delegat
 
 Now that Spring knows what a "user" looks like, it needs to know how to load that user from the database, 
 which is where ```UserDetailsService``` enters the chat. The Service tells Spring Security 
-how to *load* the user from the database, by the ```loadByUsername()``` method.
+how to *load* the user from the database, by the ```loadUserByUsername()``` method.
 
 **Login**
 
